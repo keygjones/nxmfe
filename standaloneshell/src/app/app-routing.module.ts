@@ -7,11 +7,11 @@ const routes: Routes = [
   path: 'login',
     loadChildren: () =>
   loadRemoteModule({
-    remoteEntry: 'http://localhost:4201/default-apps_login_src_app_remote-entry_entry_module_ts.js',
-    remoteName: 'login',
+    type: 'module',
+    remoteEntry: 'http://localhost:4201/remoteEntry.mjs',
     exposedModule: './Module',
   }).then((m) => {
-    return m.MicrofrontendModule;
+    return m.RemoteEntryModule;
   }),
 }
 ];
